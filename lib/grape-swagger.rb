@@ -173,10 +173,7 @@ module Grape
             end
 
             def parse_http_codes codes
-              codes ||= {}
-              codes.collect do |k, v|
-                { code: k, reason: v }
-              end
+              codes || Array.new
             end
 
             def try(*a, &b)
